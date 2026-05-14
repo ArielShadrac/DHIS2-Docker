@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_DB: dhis2
       POSTGRES_USER: dhis
-      POSTGRES_PASSWORD: dhis
+      POSTGRES_PASSWORD: # replace by your db pwd
     volumes:
       - dhis2-db:/var/lib/postgresql/data
     restart: unless-stopped
