@@ -18,7 +18,7 @@ services:
     environment:
       DHIS2_HOME: /DHIS2_home
     volumes:
-      - dhis2-home:/DHIS2_home
+      - .:/DHIS2_home
     ports:
       - "8080:8080"
     restart: unless-stopped
