@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  db:
+    image: postgis/postgis:13-3.1-alpine
+    environment:
+      POSTGRES_DB: dhis2
+      POSTGRES_USER: dhis
+      POSTGRES_PASSWORD: dhis
+    volumes:
+      - dhis2-db:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  web:
+    image: dhis2/core:2.40
+    depends_on:
+      - db
+    environment:
+      DHIS2_HOME: /DHIS2_home
+    volumes:
+      - dhis2-home:/DHIS2_home
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+volumes:
+  dhis2-db:
+  dhis2-home:
