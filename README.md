@@ -13,9 +13,9 @@ Local DHIS2 instance via Docker Compose.
 
 ```
 dhis2-docker/
-├── docker-compose.yml
 └── dhis2-home/
-    └── dhis.conf
+    ├── dhis.conf
+    └── docker-compose.yml
 ```
 
 ## Usage
